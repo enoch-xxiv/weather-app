@@ -8,8 +8,10 @@ form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     try {
-        const city = formData.get('city');
+        const city = formData.get('location');
         const data = await getWeatherData(city);
+        console.log(data);
+        form.reset();
         renderData(data);
     } catch (error) {
         console.error(error);
