@@ -5,8 +5,8 @@ export default function renderData(arr) {
         let day = document.createElement('div');
         let date = document.createElement('h3');
         let temp = document.createElement('p');
-        date.textContent = i.datetime;
-        temp.textContent = i.temp;
+        date.textContent = i.datetime.replace('2024-', '');
+        temp.textContent = `${i.temp}°C`;
         day.append(date, temp);
         content.appendChild(day);
     }
